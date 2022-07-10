@@ -25,7 +25,7 @@ public class ProgramaListas {
         }};
 
         System.out.print("Digite o nome que deseja pesquisar: ");
-        pesquisa.setNome(scan.nextLine());
+        pesquisa.setNome(scan.nextLine());                  //captação de dados
 
         int contador = 0;                                   //variável para contabilizar nomes achados
         for(int i = 0; i < lista.size(); i++){              //lógica para passar a pesquisa por toda a lista
