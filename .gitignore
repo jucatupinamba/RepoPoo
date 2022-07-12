@@ -1,0 +1,8 @@
+#Arquivos básicos ignorados
+*.idea
+*.iml
+*class
+
+#Pastas
+NomeParametro/out
+ListaNomes/out
