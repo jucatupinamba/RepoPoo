@@ -17,11 +17,10 @@ public class Aplicacao {
         System.out.println("Digite abaixo nomes para compor a lista: ");
         System.out.println("Caso deseje encerrar a lista digite um número.");
 
-            for(int i = 0; i <= lista.size(); i++) {
+            for(int i = 0; i <= lista.size(); i++) {        //Captação de dados, utilize um número para sair
                 System.out.print("Nome: ");
-                if(scan.hasNextLine()) {
-                    Processo processo = new Processo(scan.nextLine());
-                    lista.add(i, processo);
+                if(!scan.hasNextInt()) {                    //Se scan não for tipo int = true
+                    lista.add(i, new Processo(scan.nextLine()));
                 }
             }
         }
