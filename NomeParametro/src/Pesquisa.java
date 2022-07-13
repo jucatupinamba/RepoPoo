@@ -3,6 +3,7 @@ import java.util.List;
 public class Pesquisa {
     private String nome;
 
+
     public Pesquisa(String nome){
         this.nome = nome;
     }

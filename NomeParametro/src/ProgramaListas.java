@@ -12,17 +12,9 @@ public class ProgramaListas {
     public static void main (String [] args){
 
         Pesquisa pesquisa = new Pesquisa("Juca");
-        Scanner scan = new Scanner(System.in);
-        List<String> lista = new ArrayList<>(){{    //inicialização da lista com nomes pré estabelecidos
-            add("Tyler");
-            add("Musashi");
-            add("Juca");
-            add("Myamoto");
-            add("Ace");
-            add("Juca");
-            add("Johnny");
-            add("Durden");
-        }};
+        Scanner scan = new Scanner(System.in);   // pesquisar encerramento da lista pelo scan
+        List<String> lista = new ArrayList<>(){{}};
+
 
         System.out.print("Digite o nome que deseja pesquisar: ");
         pesquisa.setNome(scan.nextLine());                  //captação de dados
