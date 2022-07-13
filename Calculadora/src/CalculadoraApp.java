@@ -19,13 +19,7 @@ public class CalculadoraApp {
 
         System.out.println("Digite o número: ");
         operacao.setY(sc.nextDouble());
-        try {
-            operacao.setResultado(operacao.getOperacao());
-            System.out.println("Resultado: " + operacao.getResultado());
-        }
-        catch(RuntimeException e){
-            System.out.println(e.getMessage());
-        }
+
 
 
     }
