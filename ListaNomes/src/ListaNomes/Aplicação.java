@@ -9,19 +9,13 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Aplicação {
-    public static void main (String [] args) {
+    public static void main (String [] args) {          //encapsular lista
 
         Processo processo = new Processo();
         Scanner scan = new Scanner(System.in);
-        List<String> lista = new ArrayList<>(){{        //inicialização da lista
-            add("Carlos");
-            add("Marcos");
-            add(1, "David");        //add em array especifico
-            add("Juca");
-            add("Teepo");
-            add("Maria");
-            add("Luiza");
-        }};
+        List<Processo> lista = new ArrayList<>();
+
+        System.out.println("Digite o nome à adicionar: "); //to aqui
 
         System.out.println("Digite o nome a pesquisar: ");
         processo.setNome(scan.nextLine());
@@ -31,7 +25,7 @@ public class Aplicação {
                 System.out.println("Nome " + processo.getNome() + " encontrado com sucesso.");   //saída de dados
             }
             else{
-                System.out.println("Nome pesquisado não encontrado.");               //saída de dados
+                System.out.println("Nome pesquisado não encontrado.");               //saída de dados ** corrigir
             }
         }
     }
