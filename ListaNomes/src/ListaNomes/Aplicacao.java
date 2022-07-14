@@ -15,14 +15,19 @@ public class Aplicacao {
         List<Processo> lista = new ArrayList<>();
 
         System.out.println("Digite abaixo nomes para compor a lista: ");
-        System.out.println("Caso deseje encerrar a lista digite um número.");
+
 
             for(int i = 0; i <= lista.size(); i++) {        //Captação de dados, utilize um número para sair
                 System.out.print("Nome: ");
-                if(!scan.hasNextInt()) {                    //Se scan não for tipo int = true
+                if(!scan.hasNextInt()){                     //lógica booleana - se não for int = true
                     lista.add(i, new Processo(scan.nextLine()));
                 }
+                else{
+                    scan.close();                       //caso seja int - scan fecha
+                }
             }
+            System.out.println("Lista");
+        lista.forEach(System.out::println);             //impressão da lista
         }
     }
 

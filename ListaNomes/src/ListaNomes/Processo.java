@@ -6,6 +6,9 @@ public class Processo {
     public Processo(String nome){
         this.nome = nome;
     }
+    public String toString(){
+        return " " + getNome();
+    }
     public String getNome() {
         return nome;
     }
