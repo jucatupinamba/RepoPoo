@@ -13,8 +13,10 @@ public class Aplicacao {
 
         Scanner scan = new Scanner(System.in);
         List<Processo> lista = new ArrayList<>();
+        Processo processo = new Processo();
 
         System.out.println("Digite abaixo nomes para compor a lista: ");
+        System.out.println("Digite 0 caso deseje fechar a lista. ");
 
 
             for(int i = 0; i <= lista.size(); i++) {        //Captação de dados, utilize um número para sair
@@ -22,12 +24,15 @@ public class Aplicacao {
                 if(!scan.hasNextInt()){                     //lógica booleana - se não for int = true
                     lista.add(i, new Processo(scan.nextLine()));
                 }
-                else{
-                    scan.close();                       //caso seja int - scan fecha
-                }
             }
-            System.out.println("Lista");
-        lista.forEach(System.out::println);             //impressão da lista
+        System.out.print("Digite o nome que deseja pesquisar: ");
+        scan.nextLine();
+        processo.setNome(scan.nextLine());
+        processo.equals(lista, processo.getNome());
+
+        System.out.println(processo.toString());
+          //  System.out.println("Lista");
+        //lista.forEach(System.out::println);             //impressão da lista
         }
     }
 
