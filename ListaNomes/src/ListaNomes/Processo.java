@@ -16,26 +16,17 @@ public class Processo {
     public Processo() {
 
     }
-    public boolean equals(List<Processo> lista, String nome){
+    public String compara(List<Processo> lista, String nome){    // corrigir lógica
         for(int i = 0; i < lista.size(); i++){
             if(lista.get(i).equals(nome)){
-                y = true;
                 contador++;
-            }
-            else{
-                y = false;
+                System.out.println("Nome encontrado");
             }
         }
-        return y;
+        return nome;
     }
     public String toString(){
-        if(y){
-            mensagem = "O nome pesquisado foi encontrado " + contador + " vezes.";
-        }
-        else{
-            mensagem = "O nome pesquisado não foi encontrado.";
-        }
-        return mensagem;
+        return  "O nome pesquisado foi encontrado " + contador + " vezes.";
     }
     public String getNome() {
         return nome;

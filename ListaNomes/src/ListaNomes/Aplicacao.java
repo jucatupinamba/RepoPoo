@@ -28,7 +28,7 @@ public class Aplicacao {
         System.out.print("Digite o nome que deseja pesquisar: ");
         scan.nextLine();
         processo.setNome(scan.nextLine());
-        processo.equals(lista, processo.getNome());
+        processo.compara(lista, processo.getNome());
 
         System.out.println(processo.toString());
           //  System.out.println("Lista");
