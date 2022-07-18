@@ -12,26 +12,27 @@ public class Aplicacao {
     public static void main (String [] args) {
 
         Scanner scan = new Scanner(System.in);
-        List<Processo> lista = new ArrayList<>();
+        Pesquisa pesquisa = new Pesquisa();
         Processo processo = new Processo();
 
         System.out.println("Digite abaixo nomes para compor a lista: ");
         System.out.println("Digite 0 caso deseje fechar a lista. ");
 
 
-            for(int i = 0; i <= lista.size(); i++) {        //Captação de dados, utilize um número para sair
+            for(int i = 0; i <= pesquisa.lista.size(); i++) {        //Captação de dados, utilize um número para sair
                 System.out.print("Nome: ");
                 if(!scan.hasNextInt()){                     //lógica booleana - se não for int = true
-                    lista.add(i, new Processo(scan.nextLine()));
+                    pesquisa.cadastrarNome(scan.nextLine());
                 }
             }
         System.out.print("Digite o nome que deseja pesquisar: ");
         scan.nextLine();
-        processo.setNome(scan.nextLine());
-        processo.compara(lista, processo.getNome());
+        pesquisa.pesquisarNome(scan.nextLine());
 
-        for(int i = 0; i < lista.size(); i++) {
-            System.out.println(lista.get(i));
+        System.out.println(pesquisa.toString());
+
+        for(int i = 0; i < pesquisa.lista.size(); i++) {
+            System.out.println(pesquisa.lista.get(i).getNome());
         }
           //  System.out.println("Lista");
         //lista.forEach(System.out::println);             //impressão da lista
