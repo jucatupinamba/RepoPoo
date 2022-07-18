@@ -30,7 +30,9 @@ public class Aplicacao {
         processo.setNome(scan.nextLine());
         processo.compara(lista, processo.getNome());
 
-        System.out.println(processo.toString());
+        for(int i = 0; i < lista.size(); i++) {
+            System.out.println(lista.get(i));
+        }
           //  System.out.println("Lista");
         //lista.forEach(System.out::println);             //impressão da lista
         }
