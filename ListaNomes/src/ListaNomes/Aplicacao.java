@@ -18,9 +18,9 @@ public class Aplicacao {
         System.out.println("Digite 0 caso deseje fechar a lista. ");
 
 
-        for(int i = 0; i <= pesquisa.lista.size(); i++) {        //Captação de dados, utilize um número para sair
+        for(int i = 0; i <= pesquisa.lista.size(); i++) {
             System.out.print("Nome: ");
-            if(!scan.hasNextInt()){                     //lógica booleana - se não for int = true
+            if(!scan.hasNextInt()){
                 pesquisa.cadastrarNome(scan.nextLine());
             }
         }

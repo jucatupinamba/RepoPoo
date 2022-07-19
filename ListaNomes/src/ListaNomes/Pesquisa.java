@@ -3,25 +3,25 @@ package ListaNomes;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Pesquisa {    //nova classe para lista
-    int contador;
+public class Pesquisa {
     String nome;
-
+    String resposta = null;
     List<String> lista = new ArrayList<>();
-
     public void cadastrarNome(String nome){
         lista.add(nome);
     }
-
-    public int pesquisarNome(String nome) {         //refazer lógica
+    public String pesquisarNome(String nome) {
         for (int i = 0; i < lista.size(); i++) {
             if (lista.get(i).equals(nome)) {
-                contador++;
+                resposta = " foi encontrado.";
+            }
+            if(!lista.get(i).equals(nome)){
+                resposta = " não foi encontrado.";
             }
         }
-        return contador;
+        return resposta;
     }
     public String toString(){
-        return "O nome pesquisado foi encontrado " + contador + " vez(es).";
+        return "O nome pesquisado" + resposta;
     }
 }
