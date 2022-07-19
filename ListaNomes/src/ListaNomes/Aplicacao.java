@@ -13,29 +13,22 @@ public class Aplicacao {
 
         Scanner scan = new Scanner(System.in);
         Pesquisa pesquisa = new Pesquisa();
-        Processo processo = new Processo();
 
         System.out.println("Digite abaixo nomes para compor a lista: ");
         System.out.println("Digite 0 caso deseje fechar a lista. ");
 
 
-            for(int i = 0; i <= pesquisa.lista.size(); i++) {        //Captação de dados, utilize um número para sair
-                System.out.print("Nome: ");
-                if(!scan.hasNextInt()){                     //lógica booleana - se não for int = true
-                    pesquisa.cadastrarNome(scan.nextLine());
-                }
+        for(int i = 0; i <= pesquisa.lista.size(); i++) {        //Captação de dados, utilize um número para sair
+            System.out.print("Nome: ");
+            if(!scan.hasNextInt()){                     //lógica booleana - se não for int = true
+                pesquisa.cadastrarNome(scan.nextLine());
             }
+        }
         System.out.print("Digite o nome que deseja pesquisar: ");
         scan.nextLine();
         pesquisa.pesquisarNome(scan.nextLine());
 
         System.out.println(pesquisa.toString());
-
-        for(int i = 0; i < pesquisa.lista.size(); i++) {
-            System.out.println(pesquisa.lista.get(i).getNome());
-        }
-          //  System.out.println("Lista");
-        //lista.forEach(System.out::println);             //impressão da lista
         }
     }
 
