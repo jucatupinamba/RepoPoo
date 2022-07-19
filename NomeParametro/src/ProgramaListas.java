@@ -9,25 +9,24 @@ import java.util.List;
 import java.util.Scanner;
 
 public class ProgramaListas {
-    public static void main (String [] args){
+    public static void main (String [] nome){
 
-        Pesquisa pesquisa = new Pesquisa("Juca");
+        Pesquisa pesquisa = new Pesquisa();
         Scanner scan = new Scanner(System.in);   // pesquisar encerramento da lista pelo scan
-        List<String> lista = new ArrayList<>(){{}};
 
-
-        System.out.print("Digite o nome que deseja pesquisar: ");
-        pesquisa.setNome(scan.nextLine());                  //captação de dados
-
-        int contador = 0;                                   //variável para contabilizar nomes achados
-        for(int i = 0; i < lista.size(); i++){              //lógica para passar a pesquisa por toda a lista
-            if (lista.get(i).equals(pesquisa.getNome())){   //lógica de comparação dos dados da lista com nome digitado
-                contador++;                                 //contador soma cada nome encontrado
+        System.out.println("Digite os nomes para compor a lista.");
+        System.out.println("Digite 0 caso deseje encerrar.");
+        for(int i = 0; i <= pesquisa.lista.size(); i++) {
+            System.out.print("Nome: ");
+            if(!scan.hasNextInt()){
+                pesquisa.cadastrarNome(scan.nextLine());
             }
         }
+        System.out.println("A lista de nomes foi criada");
+        scan.nextLine();
+        System.out.print("Digite o nome que deseja pesquisar.");
+        pesquisa.pesquisarNome(scan.nextLine());
 
-        System.out.println("O nome pesquisado, " + pesquisa.getNome() + " foi encontrado " + contador + " vezes.");
-
-
+        System.out.println(pesquisa.toString());
     }
 }
