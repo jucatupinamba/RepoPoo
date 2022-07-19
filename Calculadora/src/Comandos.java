@@ -1,56 +1,51 @@
-public class Comandos {
-    private double x;
-    private double y;
-    private int operacao;
-    private double resultado;
+public class Comandos implements OperacaoMatematica{
+    private double numero1;
+    private double numero2;
+    protected double resultado;
 
-    public Comandos(){
-    }
-    public double getX() {
-        return x;
-    }
+    public Comandos(){}
 
-    public void setX(double x) {
-        this.x = x;
-    }
-
-    public double getY() {
-        return y;
-    }
-
-    public void setY(double y) {
-        this.y = y;
-    }
-
-    public int getOperacao() {
-        return operacao;
-    }
-
-    public void setOperacao(int operacao) {
-        this.operacao = operacao;
-    }
-
-    public double getResultado() {
+    @Override
+    public double soma(double numero1, double numero2) {
+        resultado = numero1 + numero2;
         return resultado;
     }
 
-    public void setResultado(double resultado) {
-       switch(getOperacao()){
-           case 1: resultado = x + y;
-           break;
+    @Override
+    public double subtracao(double numero1, double numero2) {
+        resultado = numero1 - numero2;
+        return resultado;
+    }
 
-           case 2: resultado = x - y;
-           break;
+    @Override
+    public double multiplicacao(double numero1, double numero2) {
+        resultado = numero1 * numero2;
+        return resultado;
+    }
 
-           case 3: resultado = x * y;
-           break;
+    @Override
+    public double divisao(double numero1, double numero2) {
+        resultado = numero1 / numero2;
+        return resultado;
+    }
 
-           case 4: resultado = x / y;
-           break;
+    public double getNumero1() {
+        return numero1;
+    }
 
-           default: throw new RuntimeException("Número inválido!");
+    public void setNumero1(double numero1) {
+        this.numero1 = numero1;
+    }
 
-       }
-        this.resultado = resultado;
+    public double getNumero2() {
+        return numero2;
+    }
+
+    public void setNumero2(double numero2) {
+        this.numero2 = numero2;
+    }
+
+    public double getResultado(){
+        return resultado;
     }
 }
